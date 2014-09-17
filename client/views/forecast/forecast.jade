@@ -1,0 +1,16 @@
+h2 {{title}}
+.row
+  .col-xs-3
+    form(novalidate, name='forecastForm', role='form')
+      .form-group
+        label(for='zip') Zip Code
+        input.form-control#zip(name='zip', type='text', ng-model='zip', ng-pattern='/^[0-9]{5}$/', required, autofocus)
+      button.btn.btn-success(type='submit', ng-show='forecastForm.$valid', ng-click='getForecast()') get forrkasttt
+.row(ng-show='forecasts')
+  .col-xs-12
+    .panel.panel-default
+      .panel-body
+        .webcam(ng-repeat='forecast in forecasts')
+          img(ng-src='{{forecast.icon_url}}')
+
+

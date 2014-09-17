@@ -1,0 +1,9 @@
+h2 {{title}}
+.row
+  .col-xs-3
+    form(novalidate, name='conditionsForm', role='form')
+      .form-group
+        label(for='zip') Zip Code
+        input.form-control#zip(name='zip', type='text', ng-model='zip', ng-pattern='/^[0-9]{5}$/', required, autofocus)
+      button.btn.btn-success(type='submit', ng-show='conditionsForm.$valid', ng-click='getConditions()') get weatha
+    h2 {{tempF}}
